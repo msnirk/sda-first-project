@@ -12,9 +12,9 @@ public class Enemy {
     private float baseDamage = 1;
     private float baseBlock = 1;
     private int coins = 10;
-    private Guild guild = Guild.A;
+    private pl.sdacademy.Guild guild = pl.sdacademy.Guild.A;
     private float movementSpeed = 5.0f;
-    private Buff buffs = null;
+    private pl.sdacademy.Buff buffs = null;
     private float mana = 10;
 
     public Enemy() {

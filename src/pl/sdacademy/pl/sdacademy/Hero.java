@@ -36,14 +36,13 @@ public class Hero {
         }
     }
 
-    public void heroBuild() {
+    public void heroName() {
 
         // hero name
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Hero name?");
-        String heroName = scanner.nextLine();
-        name = heroName;
+        name = scanner.nextLine();
         System.out.println("Your Hero name is: " + name);
 
         // hero sex
@@ -53,82 +52,94 @@ public class Hero {
                 System.out.println(sexVal);
             }
             String scanSex = scanner.next();
-            Sex heroSex = Sex.valueOf(scanSex.toUpperCase());
-            sex = heroSex;
+            sex = Sex.valueOf(scanSex.toUpperCase());
         } while (sex == Sex.MALE && sex == Sex.FEMALE && sex == Sex.OTHER);
-
 
         switch (sex) {
             case MALE: {
-                strength += 10;
-                stamina += 10;
+                {
+                    strength += 10;
+                    stamina += 10;
+                }
+                ;
             }
-            ;
-            break;
             case FEMALE: {
-                dexterity += 10;
-                intelligence += 10;
+                {
+                    dexterity += 10;
+                    intelligence += 10;
+                }
+                ;
             }
-            ;
-            break;
             case OTHER: {
-                charisma += 10;
-                wisdom += 10;
+                {
+                    charisma += 10;
+                    wisdom += 10;
+                }
+                ;
             }
-            ;
-            break;
             default: {
                 System.out.println("ERROR! Please choose proper sex: Male, Female or Other");
             }
         }
 
 // todo separate instances for hero stats
+    }
 
-        heroStgh();
-        {
-            // hero strength
-            System.out.println("What is your Hero strength?");
-            int heroStghSc = scanner.nextInt();
-            strength += heroStghSc;
-            System.out.println("Your Hero strength is: " + strength);
-        }
+    public void heroStgh(int i) {
+        // hero strength
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("What is your Hero strength?");
+        int heroStghSc = scanner.nextInt();
+        strength += heroStghSc;
+        System.out.println("Your Hero strength is: " + strength);
+    }
 
-        public void heroStm ();
-        {
-            // hero stamina
-            System.out.println("What is your Hero stamina?");
-            int heroStmSc = scanner.nextInt();
-            stamina += heroStmSc;
-            System.out.println("Your Hero stamina is: " + stamina);
-        }
-        public void heroDex ()
-        {
-            // hero dexterity
-            System.out.println("What is your Hero dexterity?");
-            int heroDexSc = scanner.nextInt();
-            dexterity += heroDexSc;
-            System.out.println("Your Hero dexterity is: " + dexterity);
-        }
+    public void heroStm() {
+        // hero stamina
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("What is your Hero stamina?");
+        int heroStmSc = scanner.nextInt();
+        stamina += heroStmSc;
+        System.out.println("Your Hero stamina is: " + stamina);
+    }
 
+    public void heroDex() {
+        // hero dexterity
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("What is your Hero dexterity?");
+        int heroDexSc = scanner.nextInt();
+        dexterity += heroDexSc;
+        System.out.println("Your Hero dexterity is: " + dexterity);
+    }
+
+    public void heroInt() {
         // hero intelligence
+        Scanner scanner = new Scanner(System.in);
         System.out.println("What is your Hero intelligence?");
         int heroInt = scanner.nextInt();
         intelligence += heroInt;
         System.out.println("Your Hero intelligence is: " + intelligence);
+    }
 
+    public void heroWis() {
         // hero wisdom
+        Scanner scanner = new Scanner(System.in);
         System.out.println("What is your Hero wisdom?");
         int heroWis = scanner.nextInt();
         wisdom += heroWis;
         System.out.println("Your Hero wisdom is: " + wisdom);
+    }
 
+    public void heroCHar() {
         // hero charisma
+        Scanner scanner = new Scanner(System.in);
         System.out.println("What is your Hero charisma?");
         int heroChar = scanner.nextInt();
         charisma += heroChar;
         System.out.println("Your Hero charisma is: " + charisma);
+    }
 
-
+    public void heroStatsCalc() {
         // hero stats calc
         baseDamage = (float) (strength * 0.1);
         baseBlock = (float) (dexterity * 0.1);
@@ -136,8 +147,6 @@ public class Hero {
         health = (float) (strength * 0.5) + (float) (stamina * 0.2) + (float) (dexterity * 0.1);
         mana = (float) (intelligence * 0.5) + (float) (wisdom) + (float) (stamina * 0.1);
     }
-
-
 
     public void printInfo() {
         System.out.println("===== HERO =====\n" +
